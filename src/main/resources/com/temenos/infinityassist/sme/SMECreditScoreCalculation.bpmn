@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_WVXH4DJMEey9sJtPyI-s7g" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+  <bpmn2:itemDefinition id="_facilityIdItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_payloadMapItem" structureRef="java.util.Map"/>
+  <bpmn2:itemDefinition id="_responseItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_paramsItem" structureRef="com.temenos.infinityassist.sme.SMECreditScoreParams"/>
+  <bpmn2:itemDefinition id="_scoreCardDataItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_finalBureauScoreItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="_relatedPartyBureauScoreItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="_relationshipwithBankScoreItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="_yearsOfOperationScoreItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="_managementAssessmentScoreItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="_financialLeverageScoreItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="_netProfitMarginScoreItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="_currentRatioScoreItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="_operatingMarginScoreItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="_dscrScoreItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="_totalCreditScoreItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="_requestIdItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_applicationIdItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_authorizationItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="_finalScoresItem" structureRef="java.util.Map"/>
+  <bpmn2:itemDefinition id="_scoreCardValuesItem" structureRef="java.util.Map"/>
+  <bpmn2:itemDefinition id="_ScoreCardIDItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_namespaceInputXItem" structureRef="java.lang.String"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_modelInputXItem" structureRef="java.lang.String"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_decisionInputXItem" structureRef="java.lang.String"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_ParamsInputXItem" structureRef="com.temenos.infinityassist.sme.SMECreditScoreParams"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_finalScoreOutputXItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_finalBureauScoreOutputXItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_relatedPartyBureauScoreOutputXItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_relationshipwithBankScoreOutputXItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_yearsOfOperationScoreOutputXItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_financialLeverageScoreOutputXItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_netProfitMarginScoreOutputXItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_currentRatioScoreOutputXItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_operatingMarginScoreOutputXItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_dscrScoreOutputXItem" structureRef="Integer"/>
+  <bpmn2:itemDefinition id="__420825F8-1368-4622-AF20-28C2FC24629A_AdditionalParametersInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__420825F8-1368-4622-AF20-28C2FC24629A_OperationNameInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__420825F8-1368-4622-AF20-28C2FC24629A_ServiceNameInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__420825F8-1368-4622-AF20-28C2FC24629A_AuthorizationInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__420825F8-1368-4622-AF20-28C2FC24629A_ObjectNameInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__420825F8-1368-4622-AF20-28C2FC24629A_ApplicationIdInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__420825F8-1368-4622-AF20-28C2FC24629A_CIFInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__420825F8-1368-4622-AF20-28C2FC24629A_ErrorProcessInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__420825F8-1368-4622-AF20-28C2FC24629A_FacilityIdInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__420825F8-1368-4622-AF20-28C2FC24629A_PartyIdInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__420825F8-1368-4622-AF20-28C2FC24629A_RequestIdInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__420825F8-1368-4622-AF20-28C2FC24629A_ResultOutputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__420825F8-1368-4622-AF20-28C2FC24629A_AuthorizationOutputXItem" structureRef="String"/>
+  <bpmn2:process id="InfinityAssist.SMECreditScoreCalculation" drools:packageName="com.temenos.infinityassist.sme" drools:version="1.0" drools:adHoc="false" name="SMECreditScoreCalculation" isExecutable="true" processType="Public">
+    <bpmn2:extensionElements>
+      <drools:import name="org.json.JSONObject"/>
+      <drools:import name="java.util.Map"/>
+      <drools:import name="com.temenos.infinityassist.retail.RetailCreditScoreParams"/>
+      <drools:import name="java.util.HashMap"/>
+    </bpmn2:extensionElements>
+    <bpmn2:property id="facilityId" itemSubjectRef="_facilityIdItem" name="facilityId"/>
+    <bpmn2:property id="payloadMap" itemSubjectRef="_payloadMapItem" name="payloadMap"/>
+    <bpmn2:property id="response" itemSubjectRef="_responseItem" name="response"/>
+    <bpmn2:property id="params" itemSubjectRef="_paramsItem" name="params"/>
+    <bpmn2:property id="scoreCardData" itemSubjectRef="_scoreCardDataItem" name="scoreCardData"/>
+    <bpmn2:property id="finalBureauScore" itemSubjectRef="_finalBureauScoreItem" name="finalBureauScore"/>
+    <bpmn2:property id="relatedPartyBureauScore" itemSubjectRef="_relatedPartyBureauScoreItem" name="relatedPartyBureauScore"/>
+    <bpmn2:property id="relationshipwithBankScore" itemSubjectRef="_relationshipwithBankScoreItem" name="relationshipwithBankScore"/>
+    <bpmn2:property id="yearsOfOperationScore" itemSubjectRef="_yearsOfOperationScoreItem" name="yearsOfOperationScore"/>
+    <bpmn2:property id="managementAssessmentScore" itemSubjectRef="_managementAssessmentScoreItem" name="managementAssessmentScore"/>
+    <bpmn2:property id="financialLeverageScore" itemSubjectRef="_financialLeverageScoreItem" name="financialLeverageScore"/>
+    <bpmn2:property id="netProfitMarginScore" itemSubjectRef="_netProfitMarginScoreItem" name="netProfitMarginScore"/>
+    <bpmn2:property id="currentRatioScore" itemSubjectRef="_currentRatioScoreItem" name="currentRatioScore"/>
+    <bpmn2:property id="operatingMarginScore" itemSubjectRef="_operatingMarginScoreItem" name="operatingMarginScore"/>
+    <bpmn2:property id="dscrScore" itemSubjectRef="_dscrScoreItem" name="dscrScore"/>
+    <bpmn2:property id="totalCreditScore" itemSubjectRef="_totalCreditScoreItem" name="totalCreditScore"/>
+    <bpmn2:property id="requestId" itemSubjectRef="_requestIdItem" name="requestId"/>
+    <bpmn2:property id="applicationId" itemSubjectRef="_applicationIdItem" name="applicationId"/>
+    <bpmn2:property id="authorization" itemSubjectRef="_authorizationItem" name="authorization"/>
+    <bpmn2:property id="finalScores" itemSubjectRef="_finalScoresItem" name="finalScores"/>
+    <bpmn2:property id="scoreCardValues" itemSubjectRef="_scoreCardValuesItem" name="scoreCardValues"/>
+    <bpmn2:property id="ScoreCardID" itemSubjectRef="_ScoreCardIDItem" name="ScoreCardID"/>
+    <bpmn2:sequenceFlow id="_E35739DE-A6D8-4A12-81F1-678C1B57A32A" sourceRef="_420825F8-1368-4622-AF20-28C2FC24629A" targetRef="_9E2C48AC-7261-43D7-B9CB-C2ACD1A232BF"/>
+    <bpmn2:sequenceFlow id="_42B3AFF4-2464-4FF6-93E4-5A9D3C232B2B" sourceRef="_453B5102-4B8B-4024-8B3C-53EC1DA38522" targetRef="_F0EC1659-F9F6-4AE3-9655-91E5B13FABEC"/>
+    <bpmn2:sequenceFlow id="_D5A26F36-A58F-4F4F-A4F6-03668691C5B1" sourceRef="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC" targetRef="_420825F8-1368-4622-AF20-28C2FC24629A"/>
+    <bpmn2:sequenceFlow id="_1DBA31EC-B405-4CBB-B699-7547C0252596" sourceRef="_F0EC1659-F9F6-4AE3-9655-91E5B13FABEC" targetRef="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC"/>
+    <bpmn2:scriptTask id="_F0EC1659-F9F6-4AE3-9655-91E5B13FABEC" name="filterInputData" scriptFormat="http://www.java.com/java">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[filterInputData]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_42B3AFF4-2464-4FF6-93E4-5A9D3C232B2B</bpmn2:incoming>
+      <bpmn2:outgoing>_1DBA31EC-B405-4CBB-B699-7547C0252596</bpmn2:outgoing>
+      <bpmn2:script><![CDATA[com.temenos.infinityassist.sme.SMEScripts.formatSMECreditScoreCardInput(kcontext);]]></bpmn2:script>
+    </bpmn2:scriptTask>
+    <bpmn2:task id="_420825F8-1368-4622-AF20-28C2FC24629A" drools:taskName="OriginationServiceTask" name="saveCreditScoreCard">
+      <bpmn2:documentation id="_WVXH4TJMEey9sJtPyI-s7g"><![CDATA[OriginationWorkItem/index.html]]></bpmn2:documentation>
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[saveCreditScoreCard]]></drools:metaValue>
+        </drools:metaData>
+        <drools:onEntry-script scriptFormat="http://www.java.com/java">
+          <drools:script><![CDATA[Map<String,String> finalScore = new HashMap<String,String>();
+finalScore.put("companyBureauScore",kcontext.getVariable("finalBureauScore").toString());
+finalScore.put("partyBureauScore",kcontext.getVariable("relatedPartyBureauScore").toString());
+finalScore.put("relationshipWithBank",kcontext.getVariable("relationshipwithBankScore").toString());
+finalScore.put("yearsOfEmployment",kcontext.getVariable("yearsOfOperationScore").toString());
+finalScore.put("financialLeverage",kcontext.getVariable("financialLeverageScore").toString());
+finalScore.put("netProfitMargin",kcontext.getVariable("netProfitMarginScore").toString());
+finalScore.put("currentRatio",kcontext.getVariable("currentRatioScore").toString());
+finalScore.put("operatingMargin",kcontext.getVariable("operatingMarginScore").toString());
+finalScore.put("dSCR",kcontext.getVariable("dscrScore").toString());
+kcontext.setVariable("finalScores", finalScore);
+
+Map payload = new HashMap<>();
+payload.put("scoreCardValues",kcontext.getVariable("scoreCardValues"));
+payload.put("finalScores",kcontext.getVariable("finalScores"));
+payload.put("totalScore", kcontext.getVariable("totalCreditScore"));
+payload.put("facilityId", kcontext.getVariable("facilityId").toString());
+payload.put("requestId", kcontext.getVariable("requestId").toString());
+kcontext.setVariable("payloadMap", payload);]]></drools:script>
+        </drools:onEntry-script>
+        <drools:onExit-script scriptFormat="http://www.java.com/java">
+          <drools:script><![CDATA[JSONObject data = new JSONObject(kcontext.getVariable("response").toString());
+if(data.has("scoreCardId")){
+    kcontext.setVariable("ScoreCardID",data.get("scoreCardId").toString());
+}]]></drools:script>
+        </drools:onExit-script>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_D5A26F36-A58F-4F4F-A4F6-03668691C5B1</bpmn2:incoming>
+      <bpmn2:outgoing>_E35739DE-A6D8-4A12-81F1-678C1B57A32A</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_WVXH4jJMEey9sJtPyI-s7g">
+        <bpmn2:dataInput id="_420825F8-1368-4622-AF20-28C2FC24629A_AdditionalParametersInputX" drools:dtype="String" itemSubjectRef="__420825F8-1368-4622-AF20-28C2FC24629A_AdditionalParametersInputXItem" name="AdditionalParameters"/>
+        <bpmn2:dataInput id="_420825F8-1368-4622-AF20-28C2FC24629A_OperationNameInputX" drools:dtype="String" itemSubjectRef="__420825F8-1368-4622-AF20-28C2FC24629A_OperationNameInputXItem" name="OperationName"/>
+        <bpmn2:dataInput id="_420825F8-1368-4622-AF20-28C2FC24629A_ServiceNameInputX" drools:dtype="String" itemSubjectRef="__420825F8-1368-4622-AF20-28C2FC24629A_ServiceNameInputXItem" name="ServiceName"/>
+        <bpmn2:dataInput id="_420825F8-1368-4622-AF20-28C2FC24629A_AuthorizationInputX" drools:dtype="String" itemSubjectRef="__420825F8-1368-4622-AF20-28C2FC24629A_AuthorizationInputXItem" name="Authorization"/>
+        <bpmn2:dataInput id="_420825F8-1368-4622-AF20-28C2FC24629A_ObjectNameInputX" drools:dtype="String" itemSubjectRef="__420825F8-1368-4622-AF20-28C2FC24629A_ObjectNameInputXItem" name="ObjectName"/>
+        <bpmn2:dataInput id="_420825F8-1368-4622-AF20-28C2FC24629A_ApplicationIdInputX" drools:dtype="String" itemSubjectRef="__420825F8-1368-4622-AF20-28C2FC24629A_ApplicationIdInputXItem" name="ApplicationId"/>
+        <bpmn2:dataInput id="_420825F8-1368-4622-AF20-28C2FC24629A_CIFInputX" drools:dtype="String" itemSubjectRef="__420825F8-1368-4622-AF20-28C2FC24629A_CIFInputXItem" name="CIF"/>
+        <bpmn2:dataInput id="_420825F8-1368-4622-AF20-28C2FC24629A_ErrorProcessInputX" drools:dtype="String" itemSubjectRef="__420825F8-1368-4622-AF20-28C2FC24629A_ErrorProcessInputXItem" name="ErrorProcess"/>
+        <bpmn2:dataInput id="_420825F8-1368-4622-AF20-28C2FC24629A_FacilityIdInputX" drools:dtype="String" itemSubjectRef="__420825F8-1368-4622-AF20-28C2FC24629A_FacilityIdInputXItem" name="FacilityId"/>
+        <bpmn2:dataInput id="_420825F8-1368-4622-AF20-28C2FC24629A_PartyIdInputX" drools:dtype="String" itemSubjectRef="__420825F8-1368-4622-AF20-28C2FC24629A_PartyIdInputXItem" name="PartyId"/>
+        <bpmn2:dataInput id="_420825F8-1368-4622-AF20-28C2FC24629A_RequestIdInputX" drools:dtype="String" itemSubjectRef="__420825F8-1368-4622-AF20-28C2FC24629A_RequestIdInputXItem" name="RequestId"/>
+        <bpmn2:dataInput id="_420825F8-1368-4622-AF20-28C2FC24629A_TaskNameInputX" drools:dtype="Object" name="TaskName"/>
+        <bpmn2:dataOutput id="_420825F8-1368-4622-AF20-28C2FC24629A_ResultOutputX" drools:dtype="String" itemSubjectRef="__420825F8-1368-4622-AF20-28C2FC24629A_ResultOutputXItem" name="Result"/>
+        <bpmn2:dataOutput id="_420825F8-1368-4622-AF20-28C2FC24629A_AuthorizationOutputX" drools:dtype="String" itemSubjectRef="__420825F8-1368-4622-AF20-28C2FC24629A_AuthorizationOutputXItem" name="Authorization"/>
+        <bpmn2:inputSet id="_WVXH4zJMEey9sJtPyI-s7g">
+          <bpmn2:dataInputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_AdditionalParametersInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_OperationNameInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_ServiceNameInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_AuthorizationInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_ObjectNameInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_ApplicationIdInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_CIFInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_ErrorProcessInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_FacilityIdInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_PartyIdInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_RequestIdInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_TaskNameInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="_WVXH5DJMEey9sJtPyI-s7g">
+          <bpmn2:dataOutputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_ResultOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_420825F8-1368-4622-AF20-28C2FC24629A_AuthorizationOutputX</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_WVXH5TJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>payloadMap</bpmn2:sourceRef>
+        <bpmn2:targetRef>_420825F8-1368-4622-AF20-28C2FC24629A_AdditionalParametersInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_WVXH5jJMEey9sJtPyI-s7g">
+        <bpmn2:targetRef>_420825F8-1368-4622-AF20-28C2FC24629A_OperationNameInputX</bpmn2:targetRef>
+        <bpmn2:assignment id="_WVXH5zJMEey9sJtPyI-s7g">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_WVXH6DJMEey9sJtPyI-s7g"><![CDATA[saveCreditScoreCard]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_WVXH6TJMEey9sJtPyI-s7g">_420825F8-1368-4622-AF20-28C2FC24629A_OperationNameInputX</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_WVXH6jJMEey9sJtPyI-s7g">
+        <bpmn2:targetRef>_420825F8-1368-4622-AF20-28C2FC24629A_ServiceNameInputX</bpmn2:targetRef>
+        <bpmn2:assignment id="_WVXH6zJMEey9sJtPyI-s7g">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_WVXH7DJMEey9sJtPyI-s7g"><![CDATA[CorporateLOSJavaServices]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_WVXH7TJMEey9sJtPyI-s7g">_420825F8-1368-4622-AF20-28C2FC24629A_ServiceNameInputX</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_WVXH7jJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>authorization</bpmn2:sourceRef>
+        <bpmn2:targetRef>_420825F8-1368-4622-AF20-28C2FC24629A_AuthorizationInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_WVXH7zJMEey9sJtPyI-s7g">
+        <bpmn2:targetRef>_420825F8-1368-4622-AF20-28C2FC24629A_TaskNameInputX</bpmn2:targetRef>
+        <bpmn2:assignment id="_WVXH8DJMEey9sJtPyI-s7g">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_WVXH8TJMEey9sJtPyI-s7g"><![CDATA[OriginationServiceTask]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_WVXH8jJMEey9sJtPyI-s7g">_420825F8-1368-4622-AF20-28C2FC24629A_TaskNameInputX</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="_WVXH8zJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>_420825F8-1368-4622-AF20-28C2FC24629A_ResultOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>response</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="_WVXH9DJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>_420825F8-1368-4622-AF20-28C2FC24629A_AuthorizationOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>authorization</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+    </bpmn2:task>
+    <bpmn2:endEvent id="_9E2C48AC-7261-43D7-B9CB-C2ACD1A232BF">
+      <bpmn2:incoming>_E35739DE-A6D8-4A12-81F1-678C1B57A32A</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:startEvent id="_453B5102-4B8B-4024-8B3C-53EC1DA38522">
+      <bpmn2:outgoing>_42B3AFF4-2464-4FF6-93E4-5A9D3C232B2B</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:businessRuleTask id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC" name="Credit Score Calculation" implementation="http://www.jboss.org/drools/dmn">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Credit Score Calculation]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_1DBA31EC-B405-4CBB-B699-7547C0252596</bpmn2:incoming>
+      <bpmn2:outgoing>_D5A26F36-A58F-4F4F-A4F6-03668691C5B1</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_WVXu8DJMEey9sJtPyI-s7g">
+        <bpmn2:dataInput id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_namespaceInputX" drools:dtype="java.lang.String" itemSubjectRef="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_namespaceInputXItem" name="namespace"/>
+        <bpmn2:dataInput id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_modelInputX" drools:dtype="java.lang.String" itemSubjectRef="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_modelInputXItem" name="model"/>
+        <bpmn2:dataInput id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_ParamsInputX" drools:dtype="com.temenos.infinityassist.sme.SMECreditScoreParams" itemSubjectRef="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_ParamsInputXItem" name="Params"/>
+        <bpmn2:dataOutput id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_finalScoreOutputX" drools:dtype="Integer" itemSubjectRef="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_finalScoreOutputXItem" name="finalScore"/>
+        <bpmn2:dataOutput id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_finalBureauScoreOutputX" drools:dtype="Integer" itemSubjectRef="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_finalBureauScoreOutputXItem" name="finalBureauScore"/>
+        <bpmn2:dataOutput id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_relatedPartyBureauScoreOutputX" drools:dtype="Integer" itemSubjectRef="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_relatedPartyBureauScoreOutputXItem" name="relatedPartyBureauScore"/>
+        <bpmn2:dataOutput id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_relationshipwithBankScoreOutputX" drools:dtype="Integer" itemSubjectRef="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_relationshipwithBankScoreOutputXItem" name="relationshipwithBankScore"/>
+        <bpmn2:dataOutput id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_yearsOfOperationScoreOutputX" drools:dtype="Integer" itemSubjectRef="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_yearsOfOperationScoreOutputXItem" name="yearsOfOperationScore"/>
+        <bpmn2:dataOutput id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_financialLeverageScoreOutputX" drools:dtype="Integer" itemSubjectRef="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_financialLeverageScoreOutputXItem" name="financialLeverageScore"/>
+        <bpmn2:dataOutput id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_netProfitMarginScoreOutputX" drools:dtype="Integer" itemSubjectRef="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_netProfitMarginScoreOutputXItem" name="netProfitMarginScore"/>
+        <bpmn2:dataOutput id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_currentRatioScoreOutputX" drools:dtype="Integer" itemSubjectRef="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_currentRatioScoreOutputXItem" name="currentRatioScore"/>
+        <bpmn2:dataOutput id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_operatingMarginScoreOutputX" drools:dtype="Integer" itemSubjectRef="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_operatingMarginScoreOutputXItem" name="operatingMarginScore"/>
+        <bpmn2:dataOutput id="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_dscrScoreOutputX" drools:dtype="Integer" itemSubjectRef="__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_dscrScoreOutputXItem" name="dscrScore"/>
+        <bpmn2:inputSet id="_WVXu8TJMEey9sJtPyI-s7g">
+          <bpmn2:dataInputRefs>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_namespaceInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_modelInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_ParamsInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="_WVXu8jJMEey9sJtPyI-s7g">
+          <bpmn2:dataOutputRefs>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_finalScoreOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_finalBureauScoreOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_relatedPartyBureauScoreOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_relationshipwithBankScoreOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_yearsOfOperationScoreOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_financialLeverageScoreOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_netProfitMarginScoreOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_currentRatioScoreOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_operatingMarginScoreOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_dscrScoreOutputX</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_WVXu8zJMEey9sJtPyI-s7g">
+        <bpmn2:targetRef>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_namespaceInputX</bpmn2:targetRef>
+        <bpmn2:assignment id="_WVXu9DJMEey9sJtPyI-s7g">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_WVXu9TJMEey9sJtPyI-s7g"><![CDATA[https://kiegroup.org/dmn/_AAE72DC7-BAC5-4A57-963F-F41E3B56617B]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_WVXu9jJMEey9sJtPyI-s7g">_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_namespaceInputX</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_WVXu9zJMEey9sJtPyI-s7g">
+        <bpmn2:targetRef>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_modelInputX</bpmn2:targetRef>
+        <bpmn2:assignment id="_WVXu-DJMEey9sJtPyI-s7g">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_WVXu-TJMEey9sJtPyI-s7g"><![CDATA[SMECreditScoreDecision DMN]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_WVXu-jJMEey9sJtPyI-s7g">_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_modelInputX</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_WVXu-zJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>params</bpmn2:sourceRef>
+        <bpmn2:targetRef>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_ParamsInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="_WVXu_DJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_finalScoreOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>totalCreditScore</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="_WVXu_TJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_finalBureauScoreOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>finalBureauScore</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="_WVXu_jJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_relatedPartyBureauScoreOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>relatedPartyBureauScore</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="_WVXu_zJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_relationshipwithBankScoreOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>relationshipwithBankScore</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="_WVXvADJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_yearsOfOperationScoreOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>yearsOfOperationScore</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="_WVXvATJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_financialLeverageScoreOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>financialLeverageScore</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="_WVXvAjJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_netProfitMarginScoreOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>netProfitMarginScore</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="_WVXvAzJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_currentRatioScoreOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>currentRatioScore</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="_WVXvBDJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_operatingMarginScoreOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>operatingMarginScore</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="_WVXvBTJMEey9sJtPyI-s7g">
+        <bpmn2:sourceRef>_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_dscrScoreOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>dscrScore</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+    </bpmn2:businessRuleTask>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="_WVXvBjJMEey9sJtPyI-s7g">
+    <bpmndi:BPMNPlane id="_WVXvBzJMEey9sJtPyI-s7g" bpmnElement="InfinityAssist.SMECreditScoreCalculation">
+      <bpmndi:BPMNShape id="shape__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC" bpmnElement="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC">
+        <dc:Bounds height="102.0" width="154.0" x="560.0" y="210.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__453B5102-4B8B-4024-8B3C-53EC1DA38522" bpmnElement="_453B5102-4B8B-4024-8B3C-53EC1DA38522">
+        <dc:Bounds height="56.0" width="56.0" x="184.0" y="233.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__9E2C48AC-7261-43D7-B9CB-C2ACD1A232BF" bpmnElement="_9E2C48AC-7261-43D7-B9CB-C2ACD1A232BF">
+        <dc:Bounds height="56.0" width="56.0" x="1027.0" y="233.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__420825F8-1368-4622-AF20-28C2FC24629A" bpmnElement="_420825F8-1368-4622-AF20-28C2FC24629A">
+        <dc:Bounds height="102.0" width="154.0" x="811.0" y="210.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__F0EC1659-F9F6-4AE3-9655-91E5B13FABEC" bpmnElement="_F0EC1659-F9F6-4AE3-9655-91E5B13FABEC">
+        <dc:Bounds height="102.0" width="154.0" x="323.0" y="210.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge_shape__F0EC1659-F9F6-4AE3-9655-91E5B13FABEC_to_shape__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC" bpmnElement="_1DBA31EC-B405-4CBB-B699-7547C0252596">
+        <di:waypoint xsi:type="dc:Point" x="400.0" y="261.0"/>
+        <di:waypoint xsi:type="dc:Point" x="560.0" y="261.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC_to_shape__420825F8-1368-4622-AF20-28C2FC24629A" bpmnElement="_D5A26F36-A58F-4F4F-A4F6-03668691C5B1">
+        <di:waypoint xsi:type="dc:Point" x="637.0" y="261.0"/>
+        <di:waypoint xsi:type="dc:Point" x="811.0" y="261.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__453B5102-4B8B-4024-8B3C-53EC1DA38522_to_shape__F0EC1659-F9F6-4AE3-9655-91E5B13FABEC" bpmnElement="_42B3AFF4-2464-4FF6-93E4-5A9D3C232B2B">
+        <di:waypoint xsi:type="dc:Point" x="212.0" y="261.0"/>
+        <di:waypoint xsi:type="dc:Point" x="323.0" y="261.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__420825F8-1368-4622-AF20-28C2FC24629A_to_shape__9E2C48AC-7261-43D7-B9CB-C2ACD1A232BF" bpmnElement="_E35739DE-A6D8-4A12-81F1-678C1B57A32A">
+        <di:waypoint xsi:type="dc:Point" x="888.0" y="261.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1027.0" y="261.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmn2:relationship id="_WVXvCDJMEey9sJtPyI-s7g" type="BPSimData">
+    <bpmn2:extensionElements>
+      <bpsim:BPSimData>
+        <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
+          <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_06192FA2-1BC0-49AA-9FBB-DE67FF28C7FC" id="_WVXvCTJMEey9sJtPyI-s7g">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters xsi:type="bpsim:ResourceParameters">
+              <bpsim:Availability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters xsi:type="bpsim:CostParameters">
+              <bpsim:UnitCost xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_453B5102-4B8B-4024-8B3C-53EC1DA38522" id="_WVXvCjJMEey9sJtPyI-s7g">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_420825F8-1368-4622-AF20-28C2FC24629A" id="_WVXvCzJMEey9sJtPyI-s7g">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters xsi:type="bpsim:ResourceParameters">
+              <bpsim:Availability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters xsi:type="bpsim:CostParameters">
+              <bpsim:UnitCost xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_F0EC1659-F9F6-4AE3-9655-91E5B13FABEC" id="_WVXvDDJMEey9sJtPyI-s7g">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters xsi:type="bpsim:ResourceParameters">
+              <bpsim:Availability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters xsi:type="bpsim:CostParameters">
+              <bpsim:UnitCost xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+        </bpsim:Scenario>
+      </bpsim:BPSimData>
+    </bpmn2:extensionElements>
+    <bpmn2:source>_WVXH4DJMEey9sJtPyI-s7g</bpmn2:source>
+    <bpmn2:target>_WVXH4DJMEey9sJtPyI-s7g</bpmn2:target>
+  </bpmn2:relationship>
+</bpmn2:definitions>
