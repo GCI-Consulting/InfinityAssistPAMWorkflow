@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_6C64D1D1-4066-4E0E-BDBD-94DD62AC0F91" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_46FA2978-C546-41C1-A84F-BC5E825355CF" name="Document Category Types Mapping" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_6C64D1D1-4066-4E0E-BDBD-94DD62AC0F91">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_1B1291A2-899E-467D-94F3-E0216FB10E07" name="documentCategories" isCollection="false">
+    <dmn:itemComponent id="_9C97BC4B-119F-499D-9764-9C101DBED348" name="appliesTo" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_A476A208-5B38-40CA-8ECC-5D8C47AD8362" name="documentType" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_544FCF70-AA50-4E44-8AA7-7BD3609EA3B1" name="LineOfBusiness">
+    <dmn:extensionElements/>
+    <dmn:variable id="_B6A9C73D-B789-42C5-A11D-3E74D3DC4000" name="LineOfBusiness" typeRef="string"/>
+  </dmn:inputData>
+  <dmn:decision id="_1D10031F-DF24-4BED-B054-330BD5CB5499" name="DocumentCategoryList">
+    <dmn:extensionElements/>
+    <dmn:variable id="_01D04EC3-257C-4114-B94A-98DB5E808742" name="DocumentCategoryList" typeRef="documentCategories"/>
+    <dmn:informationRequirement id="_6256C42F-56DC-4EA8-93F6-7A3B7D21E2BC">
+      <dmn:requiredInput href="#_544FCF70-AA50-4E44-8AA7-7BD3609EA3B1"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_4BDFCC9E-58C9-4BFB-87E4-9E6A594FB7C1" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_C95544CA-7EA9-48A2-8452-C9690B5F9259">
+        <dmn:inputExpression id="_3ED657B6-4E87-4A41-AC2B-564F57ADCBA3" typeRef="string">
+          <dmn:text>LineOfBusiness</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_A72C4E72-30C5-41B7-8D13-F28D82C228D0" name="prf_of_busi" typeRef="Any"/>
+      <dmn:output id="_1B03AD09-323A-445B-BB5E-C41C4AF8B58C" name="loan_doc_vhcle_loan" typeRef="Any"/>
+      <dmn:output id="_A65E3A85-DD1B-48E8-A052-8D6F575363A7" name="prf_of_add_busi" typeRef="Any"/>
+      <dmn:output id="_61A114A7-FBB2-47AB-B1E0-33EE958A1B88" name="prf_of_signing_auth" typeRef="Any"/>
+      <dmn:output id="_CD16EDB7-0083-48EA-82FB-67691753428F" name="int_Rep" typeRef="Any"/>
+      <dmn:output id="_CECCF5C0-FFCA-40A7-9EFB-2BF8BF4C697A" name="prf_of_iden" typeRef="Any"/>
+      <dmn:output id="_7B89A5BA-CAD2-44E9-849B-49038AF08711" name="prf_of_add_indvid" typeRef="Any"/>
+      <dmn:output id="_8DA46B11-1F6E-43AC-844A-130E043166FB" name="signature" typeRef="Any"/>
+      <dmn:output id="_F4C9F31F-702E-4045-8BD8-E967B94E5465" name="host_documents" typeRef="Any"/>
+      <dmn:output id="_506656C5-FE1F-4433-9E01-7C97BF7E6118" name="prf_of_inc" typeRef="Any"/>
+      <dmn:output id="_19CEA40A-0CF5-4299-BE65-81CCA159B639" name="supprtng_fin_docs" typeRef="Any"/>
+      <dmn:output id="_B00FD119-822F-4A05-A84D-8E727D3CBCE1" name="finan_statement" typeRef="Any"/>
+      <dmn:output id="_D4FFA00B-F632-4FC4-B364-99C1D4D542B0" name="agrmnt_doc" typeRef="Any"/>
+      <dmn:output id="_84D9F20A-2649-4866-BF8E-20433E7C2CC0" name="collatrl_doc" typeRef="Any"/>
+      <dmn:output id="_BAB2A87F-3055-41A8-AA75-D4BF1573E84C" name="cred_doc" typeRef="Any"/>
+      <dmn:output id="_742A0290-AADF-482E-A330-D2C33F706044" name="ltr_cred_doc" typeRef="Any"/>
+      <dmn:output id="_AAA6A3B4-FE08-44AF-AC7E-9ADCFDFD8217" name="ltr_guarnty_doc" typeRef="Any"/>
+      <dmn:output id="_A9BFAB8E-9108-423E-B7E5-788BD412E84E" name="prd_doc" typeRef="Any"/>
+      <dmn:output id="_45DDFFCC-667D-4B43-86A5-948A6D81E13B" name="deal_agrmnt_doc" typeRef="Any"/>
+      <dmn:output id="_8C97B410-69C1-4DE5-8E36-C2DE4943376F" name="transaction_doc" typeRef="Any"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_4BC4D7A8-4C40-4146-A152-E740B439D168">
+        <dmn:inputEntry id="_B176912E-0634-4098-BD5E-1CDFF3FACBBE">
+          <dmn:text>"01"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_87AC040A-F45F-4251-A420-8A870360DE2F">
+          <dmn:text>{"documentTypes":"reg_cert,tax_id,memrdum_of_assoc,artcle_of_assoc,part_agrmnt,artcle_of_incor,trst_agrmnt","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_FB3BF69C-20C6-4180-9230-E3A2E9B8739B">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_CB16716B-9DC3-4623-85C2-A90F4E92E94F">
+          <dmn:text>{"documentTypes":"fctry_estab_cert,shop_estab_cert,reg_cert,trade_lic_cert,utlty_bills","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_C100DB11-4640-4636-8716-02194CB228D9">
+          <dmn:text>{"documentTypes":"signing_auth","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_0A929218-37DB-4F4E-9626-DC430F778893">
+          <dmn:text>{"documentTypes":"cnsumr_bureu_rprt,busnss_bureu_rprt","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_EDBF7866-B99D-4F93-A722-05B3FC8CBA6E">
+          <dmn:text>{"documentTypes":"natnl_id,tax_id,drvng_lic,govt_ID,emplye_id,psprt,legalid,resident_permit","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_17C7BC0E-E894-4B6A-97C0-0424757EA927">
+          <dmn:text>{"documentTypes":"psprt,utlty_bills,drvng_lic,house_rnt_cntrct,emplye_HR_lttr,rent_bills,latest_tax_statement,city_registration_certificate","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_F2BA6A19-8BA6-4597-B5A9-4F52E4EF869A">
+          <dmn:text>{"documentTypes":"signature_specimen","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_1FF9CEE8-E851-4467-BBDB-B022F1A1883B">
+          <dmn:text>{"documentTypes":"host_proofof_identity,host_proof_of_address,accom_cert_signedbyhost","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_60325EBC-7C5C-4A5E-9904-EE515492F4A3">
+          <dmn:text>{"documentTypes":"pay_slips,tac_rtrn_stmnt,slry_acc_stmnt,acc_stmnt","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_539DF635-1701-4487-92F0-A4B95E791363">
+          <dmn:text>{"documentTypes":"bnk_stmnt,crdt_card_stmnt,prf_dpsit,prf_asst,car_fin_agrmnt,loan_stmnt_thrd_party,prf_of_source_of_funds","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_D6630A97-8CBB-4D8A-AB96-A72D377A5F33">
+          <dmn:text>{"documentTypes":"fin_stmnt,tac_rtrn_stmnt,blnce_sheet,PL_stmnt,csh_flw_Stmnt,sprdng_rprt","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_2993BB06-C2AD-45BF-969D-A85683431187">
+          <dmn:text>{"documentTypes":"ofr_ltr,loan_agrmnt,trm_sht,mdfcn_agrmnt,ltr_of_gurnte,irvcble_lttr_of_crdt,bus_ovrdrft_agrmnt,line_of_crdt_agrmnt,revolvng_line_agrmnt,clsng_fees_/_stlmnt_inv,lien_reg,cltrl_agrmnt,grnty_agrmnt,scrty_agrmnt","appliesTo":"Facility"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_EBA0BF5D-2C16-4D42-AEC1-284115AC8DA8">
+          <dmn:text>{"documentTypes":"aprsl_vlutin_insrnce,acc_stmnt,insrnce_cert,instrmnt,envmntl,flood,stck_pwr","appliesTo":"Collateral"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_3BA48263-ED06-4697-9790-0291940C1F40">
+          <dmn:text>{"documentTypes":"req_disclos,oprtnty_memo,crdty_memo,updt_oprtnty_memo","appliesTo":"Request"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_4B2CB251-699C-4FFB-9461-CCA396898FDE">
+          <dmn:text>{"documentTypes":"invoice,ship_doc,bill_of_exe","appliesTo":"Facility"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_21A33CB0-CF43-42D4-9CBE-24DC04C3B5D7">
+          <dmn:text>{"documentTypes":"invoice,ship_doc,bill_of_exe","appliesTo":"Facility"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_6E7571A7-A3E9-4FC9-9225-87DB67158E4C">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_F69E0695-AA99-4875-A978-3A326CB33E0E">
+          <dmn:text>{"documentTypes":"deal_ofr_ltr,deal_agrmnt,deal_trm_sht","appliesTo":"Request"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_315E12D5-F4E3-45AE-9B54-3DC4F69D9D88">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_62466801-E877-4474-A677-F4EC31F19B5F">
+        <dmn:inputEntry id="_26DF5421-E4E2-4ED6-80DB-FC6E381D5CCB">
+          <dmn:text>"02"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_D640329C-0B05-4182-B2D5-612219166B88">
+          <dmn:text>{"documentTypes":"reg_cert,tax_id,memrdum_of_assoc,artcle_of_assoc,part_agrmnt,artcle_of_incor,trst_agrmnt","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_D02CDB00-879E-4526-9949-CA08C0817448">
+          <dmn:text>{"documentTypes":"prfrma_inv,insur_quot","appliesTo":"Facility"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_122FD19D-8D15-4A75-A2B1-C086C9657611">
+          <dmn:text>{"documentTypes":"fctry_estab_cert,shop_estab_cert,reg_cert,trade_lic_cert,utlty_bills","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_4F861EF1-B61A-48E8-B873-FED2323C66B9">
+          <dmn:text>{"documentTypes":"signing_auth","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E7867A7C-46F7-459D-A91D-E8BBFF926C4F">
+          <dmn:text>{"documentTypes":"cnsumr_bureu_rprt,busnss_bureu_rprt","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_920BB9BF-13D6-4830-932E-C7682E3D0918">
+          <dmn:text>{"documentTypes":"natnl_id,tax_id,drvng_lic,govt_ID,emplye_id,psprt,legalid,resident_permit","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A29E5C74-53FE-4EDB-AD4C-4D9FC8DAC10B">
+          <dmn:text>{"documentTypes":"psprt,utlty_bills,drvng_lic,house_rnt_cntrct,emplye_HR_lttr,rent_bills,latest_tax_statement,city_registration_certificate","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E0CD9925-4D61-4270-AB5A-0C83017BA068">
+          <dmn:text>{"documentTypes":"signature_specimen","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_DC8F8146-E4ED-4076-AC22-2AE540EEA232">
+          <dmn:text>{"documentTypes":"host_proofof_identity,host_proof_of_address,accom_cert_signedbyhost","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_886E9C3F-2344-4673-A63A-DBE16CB2486A">
+          <dmn:text>{"documentTypes":"pay_slips,tac_rtrn_stmnt,slry_acc_stmnt,acc_stmnt","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_AFD35D00-38FE-4897-913D-89866839835A">
+          <dmn:text>{"documentTypes":"bnk_stmnt,crdt_card_stmnt,prf_dpsit,prf_asst,car_fin_agrmnt,loan_stmnt_thrd_party,prf_of_source_of_funds","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_71F800D3-3608-4C59-9C31-A64F0A08AFAF">
+          <dmn:text>{"documentTypes":"fin_stmnt,tac_rtrn_stmnt,blnce_sheet,PL_stmnt,csh_flw_Stmnt,sprdng_rprt","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_3938E195-22D0-44FE-8436-3F2880FA3031">
+          <dmn:text>{"documentTypes":"ofr_ltr,loan_agrmnt,trm_sht,mdfcn_agrmnt,ltr_of_gurnte,irvcble_lttr_of_crdt,bus_ovrdrft_agrmnt,line_of_crdt_agrmnt,revolvng_line_agrmnt,clsng_fees_/_stlmnt_inv,lien_reg,cltrl_agrmnt,grnty_agrmnt,scrty_agrmnt","appliesTo":"Facility"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_20D43E54-35D9-4840-AABD-DFCEC048E30B">
+          <dmn:text>{"documentTypes":"aprsl_vlutin_insrnce,acc_stmnt,insrnce_cert,instrmnt,envmntl,flood,stck_pwr","appliesTo":"Collateral"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_B04572B2-10C7-402D-BE7F-A1DC407E5848">
+          <dmn:text>{"documentTypes":"req_disclos,oprtnty_memo,crdty_memo,updt_oprtnty_memo","appliesTo":"Request"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_D346BC82-5072-49BD-9798-07AEE14F594E">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_0939268F-7110-4408-A26D-D20BE2ACB58F">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_EB1DBFB4-76A3-40B5-BC73-2E5CF70A43C6">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_C289D4A2-69E8-465E-A858-A23A4926031F">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_D36D523D-2344-4122-BE4E-1753F3A4CCDE">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_3C19C63C-6649-4950-8651-FE56179605C0">
+        <dmn:inputEntry id="_5AC1E8C2-C8DB-43A6-96C8-75575897DFE7">
+          <dmn:text>"03"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_B015421B-B5FC-4CAA-9802-CFDF40405544">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_3615F5FE-A36A-4006-AF3B-B22E47D48F6E">
+          <dmn:text>{"documentTypes":"prfrma_inv,insur_quot","appliesTo":"Facility"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_B1B1317C-C637-4CE7-BE44-253DBDDDC0DD">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A89FCD1D-6F6E-4031-A076-DF69B7F2532E">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_079F7D29-E771-4698-B876-7A533C77BE23">
+          <dmn:text>{"documentTypes":"cnsumr_bureu_rprt,busnss_bureu_rprt","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_414E95CE-C284-469F-8535-62AD79F88401">
+          <dmn:text>{"documentTypes":"natnl_id,tax_id,drvng_lic,govt_ID,emplye_id,psprt,legalid,resident_permit","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_72714671-FDDC-4AC0-8F17-02191236155B">
+          <dmn:text>{"documentTypes":"psprt,utlty_bills,drvng_lic,house_rnt_cntrct,emplye_HR_lttr,rent_bills,latest_tax_statement,city_registration_certificate","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_F0E00785-9B7B-46F9-AD2C-964E576BF8B8">
+          <dmn:text>{"documentTypes":"signature_specimen","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_2AD870AA-4170-4542-B47E-A9B1DA46C662">
+          <dmn:text>{"documentTypes":"host_proofof_identity,host_proof_of_address,accom_cert_signedbyhost","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_8873710E-1B48-4B76-B565-01D62D910A1F">
+          <dmn:text>{"documentTypes":"pay_slips,tac_rtrn_stmnt,slry_acc_stmnt,acc_stmnt","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_19FAC51E-D644-4436-BF59-FDE2FCFA21A8">
+          <dmn:text>{"documentTypes":"bnk_stmnt,crdt_card_stmnt,prf_dpsit,prf_asst,car_fin_agrmnt,loan_stmnt_thrd_party,prf_of_source_of_funds","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_730F2335-9403-4CD1-9BFB-63B800E352CF">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A523C39B-73DA-474D-8CED-6E544143B715">
+          <dmn:text>{"documentTypes":"ofr_ltr,loan_agrmnt,trm_sht,mdfcn_agrmnt,ltr_of_gurnte,irvcble_lttr_of_crdt,bus_ovrdrft_agrmnt,line_of_crdt_agrmnt,revolvng_line_agrmnt,clsng_fees_/_stlmnt_inv,lien_reg,cltrl_agrmnt,grnty_agrmnt,scrty_agrmnt,in_prcple_apprvl,illustrve_esis,esis","appliesTo":"Facility"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_5903DE51-A11B-45E6-A4A2-FDFDEAABDC97">
+          <dmn:text>{"documentTypes":"aprsl_vlutin_insrnce,acc_stmnt,insrnce_cert,instrmnt,envmntl,flood,stck_pwr,valn_rprt,sale_agrmnt,sale_deed,prnt_doc,prpty_tax_rcpt,elctrcty_wtr_drge_certi,pln_layt_apprvl","appliesTo":"Collateral"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_CA7BE3F3-7613-4897-B89B-922D7419170A">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_19F94938-1E59-4BA4-B1AE-043C872C79ED">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_7F54C791-E12F-492C-B34E-93CC4ABD4944">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_1F1AE928-7EC1-4990-8AB6-8B7E6ECE5DE2">
+          <dmn:text>{"documentTypes":"ini_adv_paymt_rcpt,sale_agrmnt,sale_agrmnt_undr_constrctn,addtnl_mrtge_doc,exstng_loan_outstndng_stmnt,exstng_loan_rpymnt_schdl,mrtg_loan_outstndng_stmnt,cnst_scnd_chrg","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_79781FFD-6819-4C74-8151-A14110F94A2D">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_DAF94087-A6E3-45EF-9DE6-41899E24B7FD">
+          <dmn:text>{"documentTypes":"transaction_summary","appliesTo":"Request"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_B271DC43-D89D-4157-8D85-A7280B5766B8">
+        <dmn:inputEntry id="_25511172-3DEE-4E40-83EE-A1F8C89B661E">
+          <dmn:text>"04"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_69A4AE3C-5493-4144-82CE-E94FACA7374F">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_DC6C8F40-B103-4787-A93B-5AE2B1841B4C">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_4AFD7EF5-9E74-4C85-A333-D8798A6946F2">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A65D2B76-B055-43F6-A2E7-FE97D4AC768F">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A6656AE0-D262-46E3-B120-08CEBB062610">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_5E2C0EAF-72F5-49A2-BEAD-1BAAA256F82D">
+          <dmn:text>{"documentTypes":"natnl_id,tax_id,drvng_lic,govt_ID,emplye_id,psprt,legalid,resident_permit","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_50F1FFFC-C52B-4D85-B229-E15E3DB9FB13">
+          <dmn:text>{"documentTypes":"psprt,utlty_bills,drvng_lic,house_rnt_cntrct,emplye_HR_lttr,rent_bills,latest_tax_statement,city_registration_certificate","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_D760B7A4-8679-47DF-9702-004E5D10B9D4">
+          <dmn:text>{"documentTypes":"signature_specimen","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E1FF58B1-8DEB-4997-8952-1E62C27DC98E">
+          <dmn:text>{"documentTypes":"host_proofof_identity,host_proof_of_address,accom_cert_signedbyhost","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_4B2FCB4B-D5C3-4018-9540-2BBD6641362B">
+          <dmn:text>{"documentTypes":"prf_of_source_of_funds","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_86F447C9-8941-4C6F-9019-45C8ED9C5863">
+          <dmn:text>{"documentTypes":"bnk_stmnt,crdt_card_stmnt,prf_dpsit,prf_asst,car_fin_agrmnt,loan_stmnt_thrd_party,prf_of_source_of_funds","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_212DC9D6-C719-4A79-8C72-391100EC7025">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_6E91CCA9-D47D-4D38-B0F6-87D302DD523E">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_8CCA55B1-22C0-4593-A825-22BE7CFB5D07">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_EC140F95-97E5-4EC1-9B1F-046D0E683F06">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_8F9EDACE-5FEE-4C5D-98F7-63070FCD2E3A">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_81EAE02C-61AC-4872-A9C6-49CC453F7DB9">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_B7145B99-7FB8-4E79-8402-C0DC9089B2D6">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_C2D4C7DA-E454-4EE1-9442-0418FCC1F55F">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_CDC4AD33-197D-4171-BD51-11AABD068E71">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_C004B4FB-601A-463F-9831-FDFDBA79EB38">
+        <dmn:inputEntry id="_96BF6EF9-64A6-4469-A284-9210F7048850">
+          <dmn:text>"05"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_50EE4F39-9670-4AE9-9AF0-D34C689EBF46">
+          <dmn:text>{"documentTypes":"reg_cert,tax_id,memrdum_of_assoc,artcle_of_assoc,part_agrmnt,artcle_of_incor,trst_agrmnt","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A0061861-51EB-4AB1-9FDE-1965D6EEBF78">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_4AA08432-4881-42D1-91D8-A63DE461D034">
+          <dmn:text>{"documentTypes":"fctry_estab_cert,shop_estab_cert,reg_cert,trade_lic_cert,utlty_bills","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_5639948F-237F-4C82-A8C4-688E4FF518DC">
+          <dmn:text>{"documentTypes":"signing_auth","appliesTo":"Entity"}
+</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_CFE1BB5F-8357-4672-9905-6450CE08713F">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_2D1D7EB3-2842-498D-B1E0-D0D3EAF5EEA8">
+          <dmn:text>{"documentTypes":"natnl_id,tax_id,drvng_lic,govt_ID,emplye_id,psprt,legalid,resident_permit","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_0B53AE0F-76E8-45B3-B934-291CEFE2CE6F">
+          <dmn:text>{"documentTypes":"psprt,utlty_bills,drvng_lic,house_rnt_cntrct,emplye_HR_lttr,rent_bills,latest_tax_statement,city_registration_certificate","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_F9938DB2-706E-4CC8-9538-9EDB663275D7">
+          <dmn:text>{"documentTypes":"signature_specimen","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_0EAD1C01-C5AB-43F4-A072-AC11BD463639">
+          <dmn:text>{"documentTypes":"host_proofof_identity,host_proof_of_address,accom_cert_signedbyhost","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_53AFD874-7643-4A5A-824C-9D88E5192D99">
+          <dmn:text>{"documentTypes":"prf_of_source_of_funds","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_987CFFD6-1F94-413B-AE4F-09019C07175A">
+          <dmn:text>{"documentTypes":"bnk_stmnt,crdt_card_stmnt,prf_dpsit,prf_asst,car_fin_agrmnt,loan_stmnt_thrd_party,prf_of_source_of_funds","appliesTo":"Entity"}</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_5F697E16-87BC-4521-A8D8-532680E5A79E">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_F8B76735-8D3D-4F52-A798-E17AA00C0AEE">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_188B3526-E006-4C26-907D-252CC485EACD">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_1FC7EBC8-C281-4E6C-BD76-B562B706CCC0">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_B5678E5E-195E-4222-AE6C-4E31049F180D">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_9FC5A020-24AC-43B5-9F29-C90AF4904B02">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_FCFEE6E1-9472-4CDF-B990-A6BF55507C27">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_7CB06C95-50DF-47E8-AD18-F849B8CD0EE6">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_9EDD1076-AA32-4AE0-AA39-83EEC08BD221">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_F209F0D3-92E2-47E4-9192-D50B1D122A83" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_4BDFCC9E-58C9-4BFB-87E4-9E6A594FB7C1">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>213</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>235</kie:width>
+            <kie:width>226</kie:width>
+            <kie:width>413</kie:width>
+            <kie:width>160</kie:width>
+            <kie:width>192</kie:width>
+            <kie:width>251</kie:width>
+            <kie:width>466</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_544FCF70-AA50-4E44-8AA7-7BD3609EA3B1" dmnElementRef="_544FCF70-AA50-4E44-8AA7-7BD3609EA3B1" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="184" y="191" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_1D10031F-DF24-4BED-B054-330BD5CB5499" dmnElementRef="_1D10031F-DF24-4BED-B054-330BD5CB5499" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="364" y="198" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_6256C42F-56DC-4EA8-93F6-7A3B7D21E2BC" dmnElementRef="_6256C42F-56DC-4EA8-93F6-7A3B7D21E2BC">
+        <di:waypoint x="234" y="216"/>
+        <di:waypoint x="364" y="223"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

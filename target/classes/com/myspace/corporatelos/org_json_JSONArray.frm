@@ -1,0 +1,1 @@
+{"id":"053ff67a-abe5-411b-a963-fec24c47e68e","name":"org_json_JSONArray","model":{"source":"EXTERNAL","className":"org.json.JSONArray","name":"JSONArray","properties":[],"formModelType":"org.kie.workbench.common.forms.data.modeller.model.DataObjectFormModel"},"fields":[],"layoutTemplate":{"version":3,"style":"FLUID","layoutProperties":{},"rows":[]}}
